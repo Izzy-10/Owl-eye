@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mutation Soon — AI-Powered Video Surveillance</title>
-<meta name="description" content="Mutation Soon adds real-time AI detection — fire, smoke, perimeter intrusion, unsafe behavior — on top of the cameras you already own. No hardware replacement.">
-<meta property="og:title" content="Mutation Soon — AI-Powered Video Surveillance">
+<title>Owl Eye — AI-Powered Video Surveillance</title>
+<meta name="description" content="Owl Eye adds real-time AI detection — fire, smoke, perimeter intrusion, unsafe behavior — on top of the cameras you already own. No hardware replacement.">
+<meta property="og:title" content="Owl Eye — AI-Powered Video Surveillance">
 <meta property="og:description" content="Your cameras already see everything. Now they can tell you what matters.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231E93D1'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' font-weight='700' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230B0E1A'/%3E%3Ccircle cx='50' cy='52' r='24' fill='none' stroke='%23D4A24E' stroke-width='6'/%3E%3Ccircle cx='50' cy='52' r='9' fill='%23D4A24E'/%3E%3C/svg%3E">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
 
   :root{
-    --bg: #eaf6ff;
-    --panel: #ffffff;
-    --panel-2: #f3fafe;
-    --line: #cfe8f7;
-    --sky: #1e93d1;
-    --sky-soft: #7cc4ea;
-    --sky-deep: #12628f;
+    --bg: #0b0e1a;
+    --panel: #141a2e;
+    --panel-2: #1a2138;
+    --line: #2a3350;
+    --sky: #d4a24e;
+    --sky-soft: #e8c27a;
+    --sky-deep: #a67a2e;
     --alert: #d1453a;
     --alert-deep: #a5342a;
-    --text: #10202c;
-    --text-dim: #52708a;
+    --text: #f1ede3;
+    --text-dim: #9099b0;
     --serif: 'Fraunces', serif;
     --sans: 'Inter', sans-serif;
   }
@@ -48,7 +48,7 @@
     padding: 0 32px;
   }
 
-  ::selection{ background: var(--sky); color: #ffffff; }
+  ::selection{ background: var(--sky); color: #1a1206; }
 
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
@@ -63,7 +63,7 @@
   header{
     position: relative;
     z-index: 50;
-    background: #eaf6ff;
+    background: #0b0e1a;
     border-bottom: 1px solid var(--line);
   }
   nav{
@@ -89,7 +89,7 @@
     border-radius: 6px;
     position: relative;
     flex-shrink: 0;
-    background: linear-gradient(155deg, #eaf6ff, #bfe6f9);
+    background: linear-gradient(155deg, #1a2138, #0b0e1a);
   }
   .logo-mark::after{
     content:'';
@@ -113,7 +113,7 @@
     white-space: nowrap;
     transition: border-color 0.2s ease, background 0.2s ease;
   }
-  .nav-cta:hover{ background: rgba(30,147,209,0.08); border-color: var(--sky); }
+  .nav-cta:hover{ background: rgba(212,162,78,0.08); border-color: var(--sky); }
   .nav-mobile-hide{ display:flex; }
 
   @media (max-width: 720px){
@@ -124,7 +124,7 @@
   .hero{
     padding: 88px 0 96px;
     border-bottom: 1px solid var(--line);
-    background: linear-gradient(180deg, #f5fbff 0%, var(--bg) 60%);
+    background: linear-gradient(180deg, #141a2e 0%, var(--bg) 60%);
   }
   .hero-grid{
     display: grid;
@@ -177,10 +177,10 @@
   }
   .btn-primary{
     background: var(--sky);
-    color: #ffffff;
+    color: #1a1206;
     border: 1px solid var(--sky);
   }
-  .btn-primary:hover{ background: #3aa8e0; }
+  .btn-primary:hover{ background: #e8c27a; }
   .btn-secondary{
     background: transparent;
     border: 1px solid var(--line);
@@ -196,7 +196,7 @@
     border: 1px solid var(--line);
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 20px 40px -20px rgba(30,147,209,0.35);
+    box-shadow: 0 20px 40px -20px rgba(212,162,78,0.35);
   }
   .vf-scene{
     position: absolute; inset: 0;
@@ -251,7 +251,7 @@
     position: absolute;
     left:0; right:0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(94,190,235,0.65), transparent);
+    background: linear-gradient(90deg, transparent, rgba(232,194,122,0.65), transparent);
     animation: scan 4.5s ease-in-out infinite;
   }
   @keyframes scan{
@@ -262,39 +262,71 @@
     100% { top: 4%; opacity: 0; }
   }
 
-  .vf-box{
+  .vf-pin{
     position: absolute;
-    border: 1.5px solid var(--sky);
-    border-radius: 2px;
+    width: 16px; height: 16px;
+    background: var(--sky);
+    border-radius: 50% 50% 50% 0;
+    transform: translate(-50%, -160%) rotate(-45deg);
     opacity: 0;
-    animation: reveal 0.5s ease forwards;
+    box-shadow: 0 0 0 5px rgba(212,162,78,0.22);
+    animation: pinDrop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   }
-  .vf-box.b1{ left: 32.5%; bottom: 18%; width: 8.5%; height: 32%; animation-delay: 1.1s; }
-  .vf-box.b2{ left: 56.5%; bottom: 18%; width: 7.5%; height: 26%; animation-delay: 1.5s; }
-  .vf-box.alert{ border-color: var(--alert); }
-  .vf-box.alert{ left: 8%; bottom: 44%; width: 16%; height: 24%; animation-delay: 1.9s; }
-
-  @keyframes reveal{
-    from{ opacity: 0; transform: scale(1.04); }
-    to{ opacity: 1; transform: scale(1); }
-  }
-
-  .vf-tag{
+  .vf-pin::after{
+    content:'';
     position: absolute;
+    top: 4px; left: 4px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #0b0e1a;
+  }
+  .vf-pin.p1{ left: 36.5%; bottom: calc(18% + 32%); animation-delay: 1.1s; }
+  .vf-pin.p2{ left: 60%; bottom: calc(18% + 26%); animation-delay: 1.5s; }
+  .vf-pin.alert{ left: 16%; bottom: calc(44% + 24%); background: var(--alert); box-shadow: 0 0 0 5px rgba(209,69,58,0.22); animation-delay: 1.9s; }
+
+  @keyframes pinDrop{
+    0%{ opacity: 0; transform: translate(-50%, -260%) rotate(-45deg); }
+    60%{ opacity: 1; }
+    100%{ opacity: 1; transform: translate(-50%, -160%) rotate(-45deg); }
+  }
+
+  .vf-notices{
+    position: absolute;
+    top: 40px; right: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    max-width: 72%;
+  }
+  .vf-notice{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(20,26,46,0.94);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 7px 10px;
     font-family: var(--sans);
     font-size: 0.62rem;
-    padding: 2px 6px;
-    background: var(--sky);
-    color: #ffffff;
-    border-radius: 2px;
     font-weight: 600;
+    color: var(--text);
     white-space: nowrap;
     opacity: 0;
-    animation: reveal 0.5s ease forwards;
+    transform: translateX(14px);
+    animation: noticeIn 0.4s ease forwards;
+    box-shadow: 0 10px 22px -10px rgba(0,0,0,0.55);
   }
-  .vf-tag.t1{ left: 32.5%; bottom: calc(18% + 32% + 4px); animation-delay: 1.3s; }
-  .vf-tag.t2{ left: 56.5%; bottom: calc(18% + 26% + 4px); animation-delay: 1.7s; }
-  .vf-tag.alert{ background: var(--alert); color: #fff; left: 8%; bottom: calc(44% + 24% + 4px); animation-delay: 2.1s; }
+  .vf-notice .dot{ width: 6px; height: 6px; border-radius: 50%; background: var(--sky); flex-shrink: 0; }
+  .vf-notice.alert .dot{ background: var(--alert); }
+  .vf-notice.n1{ animation-delay: 1.3s; }
+  .vf-notice.n2{ animation-delay: 1.7s; }
+  .vf-notice.alert{ animation-delay: 2.1s; }
+
+  @keyframes noticeIn{
+    from{ opacity: 0; transform: translateX(14px); }
+    to{ opacity: 1; transform: translateX(0); }
+  }
 
   .vf-hud{
     position: absolute;
@@ -498,7 +530,7 @@
     justify-self: end;
   }
   .sev.critical{ background: rgba(209,69,58,0.1); color: var(--alert-deep); border: 1px solid rgba(209,69,58,0.35); }
-  .sev.watch{ background: rgba(30,147,209,0.1); color: var(--sky-deep); border: 1px solid rgba(30,147,209,0.3); }
+  .sev.watch{ background: rgba(212,162,78,0.1); color: var(--sky-deep); border: 1px solid rgba(212,162,78,0.3); }
 
   /* ---------- MATH / WHY NOW ---------- */
   .math{
@@ -551,7 +583,7 @@
   .cta{
     padding: 100px 0 110px;
     text-align: center;
-    background: linear-gradient(180deg, var(--bg) 0%, #f5fbff 100%);
+    background: linear-gradient(180deg, var(--bg) 0%, #141a2e 100%);
   }
   .cta h2{
     font-family: var(--serif);
@@ -616,7 +648,7 @@
     border: 1px solid var(--line);
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 12px 30px -10px rgba(18,98,143,0.35);
+    box-shadow: 0 12px 30px -10px rgba(166,122,46,0.35);
     min-width: 190px;
   }
   .fnav-menu.open{ display: flex; }
@@ -633,17 +665,17 @@
     height: 48px;
     border-radius: 50%;
     background: var(--sky);
-    color: #ffffff;
+    color: #1a1206;
     border: none;
     font-size: 1.1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 24px -8px rgba(18,98,143,0.5);
+    box-shadow: 0 10px 24px -8px rgba(166,122,46,0.5);
     transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
   }
-  .fnav-btn:hover{ background: #3aa8e0; }
+  .fnav-btn:hover{ background: #e8c27a; }
   #back-to-top{
     opacity: 0;
     pointer-events: none;
@@ -660,12 +692,12 @@
 
 <header>
   <nav>
-    <div class="logo"><span class="logo-mark"></span>M🔜</div>
+    <div class="logo"><span class="logo-mark"></span>👁 Owl Eye</div>
     <div class="nav-links nav-mobile-hide">
       <a href="#how">How it works</a>
       <a href="#detect">Detections</a>
       <a href="#math">Why now</a>
-      <a href="mutation-soon-pitch-deck.pptx" download>Pitch deck</a>
+      <a href="owl-eye-pitch-deck.pptx" download>Pitch deck</a>
     </div>
     <a href="booking.html" class="nav-cta">Book a walkthrough</a>
   </nav>
@@ -676,7 +708,7 @@
     <div>
       <div class="eyebrow">For teams still watching monitors, not insights</div>
       <h1>Your cameras already see everything. They just can't tell you what matters.</h1>
-      <p class="lede">Mutation Soon adds real-time detection on top of the cameras you already have — fire, smoke, unsafe behavior, and perimeter breaches, surfaced the moment they happen instead of found in tomorrow's footage.</p>
+      <p class="lede">Owl Eye adds real-time detection on top of the cameras you already have — fire, smoke, unsafe behavior, and perimeter breaches, surfaced the moment they happen instead of found in tomorrow's footage.</p>
       <div class="hero-actions">
         <a href="booking.html" class="btn-primary">Book a walkthrough</a>
         <a href="see-it-in-action.html" class="btn-secondary">See it on your cameras</a>
@@ -694,12 +726,15 @@
           <div class="vf-grain"></div>
           <div class="vf-scanline"></div>
 
-          <div class="vf-box b1"></div>
-          <div class="vf-tag t1">PERSON · CORRIDOR B</div>
-          <div class="vf-box b2"></div>
-          <div class="vf-tag t2">PERSON · TRACKED</div>
-          <div class="vf-box alert"></div>
-          <div class="vf-tag alert">RESTRICTED ZONE · 23:41</div>
+          <div class="vf-pin p1"></div>
+          <div class="vf-pin p2"></div>
+          <div class="vf-pin alert"></div>
+
+          <div class="vf-notices">
+            <div class="vf-notice n1"><span class="dot"></span>Person · Corridor B</div>
+            <div class="vf-notice n2"><span class="dot"></span>Person · tracked</div>
+            <div class="vf-notice alert"><span class="dot"></span>Restricted zone · 23:41</div>
+          </div>
 
           <div class="vf-hud">
             <span>LOADING DOCK — CAM 04</span>
@@ -839,7 +874,7 @@
 
 <footer>
   <div class="wrap footer-row">
-    <span>Mutation Soon</span>
+    <span>Owl Eye</span>
     <span>We only use the info you send us to follow up about your walkthrough — never sold or shared.</span>
     <span>Durban, South Africa</span>
   </div>
@@ -852,7 +887,7 @@
     <a href="#detect">Detections</a>
     <a href="#math">Why now</a>
     <a href="see-it-in-action.html">See it on your cameras</a>
-    <a href="mutation-soon-pitch-deck.pptx" download>Pitch deck</a>
+    <a href="owl-eye-pitch-deck.pptx" download>Pitch deck</a>
     <a href="booking.html">Book a walkthrough</a>
   </div>
   <button id="fnav-toggle" class="fnav-btn" aria-label="Open menu" aria-expanded="false">☰</button>
